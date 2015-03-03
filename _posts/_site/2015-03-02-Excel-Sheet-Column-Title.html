@@ -1,0 +1,43 @@
+<h3 id="given-a-positive-integer-return-its-corresponding-column-title">Given a positive integer, return its corresponding column title.</h3>
+
+<pre><code>1 -&gt; A
+2 -&gt; B
+3 -&gt; C
+...
+26 -&gt; Z
+27 -&gt; AA
+28 -&gt; AB 
+</code></pre>
+
+<h3 id="boundary-condition">Boundary condition</h3>
+
+<pre><code>0 -&gt; null
+1 -&gt; A
+26 -&gt; Z
+27 -&gt; AA
+</code></pre>
+
+<h3 id="good-answer">Good Answer:</h3>
+
+<pre><code>    这题类似于十进制转换16进制的算法, 只要使用除法和求余数的操作每次求出小
+    数部分即可。需要注意的地方是 求余操作的结果范围是[0,n-1],但是在本题中数
+    据范围是 [1,n],需要将这部分进行转换.
+</code></pre>
+
+<h3 id="code">Code:</h3>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="c1"># @return a string</span>
+    <span class="k">def</span> <span class="nf">convertToTitle</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+        <span class="n">_baseline</span> <span class="o">=</span> <span class="n">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+        
+        <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">_re</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">while</span> <span class="n">num</span> <span class="o">/</span> <span class="mi">26</span><span class="p">:</span>
+            <span class="n">_st</span> <span class="o">=</span> <span class="n">chr</span><span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="n">_baseline</span><span class="p">)</span>
+            <span class="n">_re</span> <span class="o">=</span> <span class="n">_st</span> <span class="o">+</span> <span class="n">_re</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">/</span> <span class="mi">26</span> <span class="o">-</span> <span class="mi">1</span>
+            
+        <span class="n">_re</span> <span class="o">=</span>  <span class="n">chr</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="n">_baseline</span><span class="p">)</span>  <span class="o">+</span> <span class="n">_re</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">_re</span><span class="p">)</span></code></pre></div>
+
