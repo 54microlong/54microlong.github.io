@@ -5,8 +5,7 @@ date:   2015-03-02 10:40:59
 categories: jekyll update
 ---
 
-## Questions1: Excel Sheet Column Title
-Given a positive integer, return its corresponding column title.
+###Given a positive integer, return its corresponding column title.
 
     1 -> A
     2 -> B
@@ -26,9 +25,9 @@ Given a positive integer, return its corresponding column title.
     
 ###Good Answer:
 
-        这题类似于十进制转换16进制的算法，只要使用除法和求余数的操作每次求出小数部分即可。
-    需要注意的地方是 求余操作的结果范围是[0,n-1],但是在本题中数据范围是 [1,n],需要
-    将这部分进行转换。
+        这题类似于十进制转换16进制的算法, 只要使用除法和求余数的操作每次求出小
+        数部分即可。需要注意的地方是 求余操作的结果范围是[0,n-1],但是在本题中数
+        据范围是 [1,n],需要将这部分进行转换.
     
 ###Code:
 {% highlight ruby %}
