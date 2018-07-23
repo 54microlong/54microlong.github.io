@@ -1,12 +1,30 @@
-# Site settings
-title: Long's Blog
-email: chenlong888@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Life worth memory
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.mycodes.me" # the base hostname & protocol for your site
-twitter_username: tinnnyo
-github_username:  54microlong
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+# relative_permalinks: true
+
+# Setup
+title:               Long's Blog
+tagline:             'A Life Worth Living Is Worth Recording'
+# description:         'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+description:         'Long nagging blog based on the <a href="https://github.com/poole/lanyon" target="_blank">Lanyon</a>.'
+url:                 http://54microlong.github.io/
+baseurl:             ''
+paginate:            5
+
+# About/contact
+author:
+  name:              Long Chen
+  url:               https://github.com/54microlong
+  email:             chenlong888@gmail.com
+
+# Custom vars
+version:             1.0.0
+
 
 # Build settings
-markdown: kramdown
+# markdown: kramdown
+# theme: minima
+plugins:
+  - jekyll-paginate
