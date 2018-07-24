@@ -28,3 +28,4 @@ version:             1.0.0
 # theme: minima
 plugins:
   - jekyll-paginate
+  - jekyll-admin
